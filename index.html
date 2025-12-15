@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Camera Face-Follow Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="left">
+      <div>Camera + overlays</div>
+      <video id="camVideo" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <div id="right">
+      <div>Output (viewport follows face)</div>
+      <canvas id="outCanvas"></canvas>
+      <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn" disabled>Stop</button>
+        <label>Zoom: <input id="zoom" type="range" min="1" max="2.5" step="0.1" value="1.4"></label>
+        <label>Smooth: <input id="smooth" type="range" min="0" max="1" step="0.05" value="0.18"></label>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface@latest/dist/blazeface.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
